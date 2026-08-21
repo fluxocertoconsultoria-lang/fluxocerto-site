@@ -1,0 +1,27 @@
+{
+  "name": "site-fluxocerto",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "wrangler pages dev --port 8788",
+    "build": "vite build && node scripts/postbuild.mjs",
+    "preview": "npm run build && wrangler pages dev",
+    "deploy": "npm run build && wrangler pages deploy",
+    "db:local": "wrangler d1 execute fluxocerto --local --file=./schema.sql",
+    "db:remote": "wrangler d1 execute fluxocerto --remote --file=./schema.sql"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.1.5",
+    "wrangler": "^4.114.0"
+  }
+}

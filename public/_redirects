@@ -1,0 +1,7 @@
+# Endereço antigo do WordPress
+/inicio       /   301
+/inicio/      /   301
+
+# /admin e /mentoria são servidos nativamente pelo Cloudflare Pages a partir de
+# dist/admin/index.html e dist/mentoria/index.html (gerados em
+# scripts/postbuild.mjs) — não precisam de regra aqui.

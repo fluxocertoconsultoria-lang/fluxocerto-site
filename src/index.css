@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand: #2b42e8;
+  --color-brand-dark: #1c30c4;
+  --color-brand-soft: #eef0fd;
+  --color-accent: #44b65d;
+  --color-accent-dark: #379149;
+  --color-star: #ffc107;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #1e293b;
+  --color-muted: #8f8f8f;
+  --color-line: #ececec;
+  --color-panel: #f6f6f6;
+
+  --font-display: 'Epilogue', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-muted);
+    background: #fff;
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+}
+
+@layer components {
+  .container-fc {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply font-display text-[13px] font-semibold uppercase tracking-[0.3em] text-brand;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-accent px-7 py-3.5 font-display text-[15px] font-semibold text-white transition hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line px-7 py-3.5 font-display text-[15px] font-semibold text-ink transition hover:border-brand hover:text-brand;
+  }
+  .card {
+    @apply rounded-none border border-line bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_18px_50px_-24px_rgba(43,66,232,0.35)];
+  }
+  .icon-box {
+    @apply inline-flex h-12 w-12 items-center justify-center bg-accent text-white;
+  }
+  .arrow-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white transition group-hover:bg-brand-dark;
+  }
+}
+
+/* animação de entrada das seções */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* marquee dos logos de clientes */
+@keyframes fc-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: fc-marquee 38s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

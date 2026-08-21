@@ -1,0 +1,26 @@
+name = "site-fluxocerto"
+compatibility_date = "2026-07-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# Banco do conteúdo, leads e catálogo de imagens.
+# Rode `wrangler d1 create fluxocerto` e cole o id retornado abaixo.
+[[d1_databases]]
+binding = "DB"
+database_name = "fluxocerto"
+database_id = "0f9b22c1-7c59-4fa1-92ec-5a45f4af3deb"
+
+# Bucket das imagens enviadas pelo painel.
+# DESATIVADO: o R2 ainda não está habilitado nesta conta Cloudflare.
+# Depois de habilitar o R2 no dashboard, rode:
+#   wrangler r2 bucket create fluxocerto-midia
+# e descomente o bloco abaixo (o upload de imagens do painel volta a funcionar).
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "fluxocerto-midia"
+
+# ATENÇÃO: ADMIN_PASSWORD e SESSION_SECRET NÃO ficam aqui.
+# Em produção use:
+#   wrangler pages secret put ADMIN_PASSWORD
+#   wrangler pages secret put SESSION_SECRET
+# Para desenvolvimento local, crie um arquivo .dev.vars (já ignorado pelo git).
