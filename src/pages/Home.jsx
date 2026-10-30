@@ -6,6 +6,7 @@ import LogoMarquee from '../components/LogoMarquee.jsx'
 import Depoimentos from '../components/Depoimentos.jsx'
 import ParceirosNegocio from '../components/ParceirosNegocio.jsx'
 import Icon from '../components/Icons.jsx'
+import VitrinePlanilhas from '../components/VitrinePlanilhas.jsx'
 
 function CartaoFlutuante() {
   return (
@@ -89,17 +90,22 @@ export default function Home() {
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/60 sm:text-[18px]">
                 {home.hero.texto}
               </p>
-              {home.hero.ctaLabel ? (
-                <a
-                  href={home.hero.ctaHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-primary mt-9"
-                >
-                  {home.hero.ctaLabel}
-                  <Icon name="arrowRight" className="h-4 w-4" />
-                </a>
-              ) : null}
+              <div className="mt-9 flex flex-wrap gap-3">
+                {home.hero.ctaLabel ? (
+                  <a href={home.hero.ctaHref} target="_blank" rel="noreferrer" className="btn-primary">
+                    {home.hero.ctaLabel}
+                    <Icon name="arrowRight" className="h-4 w-4" />
+                  </a>
+                ) : null}
+                {home.hero.ctaSecundarioLabel ? (
+                  <a
+                    href={home.hero.ctaSecundarioHref}
+                    className="btn-ghost !border-white/25 !text-white hover:!border-accent hover:!text-accent"
+                  >
+                    {home.hero.ctaSecundarioLabel}
+                  </a>
+                ) : null}
+              </div>
             </Reveal>
 
             <Reveal delay={120} className="relative mx-auto max-w-sm md:max-w-none">
@@ -114,6 +120,9 @@ export default function Home() {
           </div>
         </section>
       ) : null}
+
+      {/* ----------------------------------------------------- planilhas */}
+      <VitrinePlanilhas dados={home.planilhas} />
 
       {/* ------------------------------------------------------ clientes */}
       {home.clientes.ativo !== false ? (
