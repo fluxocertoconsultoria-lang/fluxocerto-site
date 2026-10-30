@@ -48,8 +48,54 @@ export const defaultContent = {
         'Organização e controle financeiro para empresas que desejam crescer com segurança. Na hotelaria ou em outros setores, ajudamos você a enxergar seus números com clareza, tomar decisões estratégicas e conquistar previsibilidade.',
       ctaLabel: 'Entre em contato',
       ctaHref: 'https://wa.me/5511975578387',
+      ctaSecundarioLabel: 'Conheça as planilhas',
+      ctaSecundarioHref: '#planilhas',
       imagem: '/img/hero.jpg',
       imagemAlt: 'Graziela Souza, consultora financeira',
+    },
+
+    planilhas: {
+      ativo: true,
+      eyebrow: 'Planilhas Fluxo Certo',
+      titulo: 'O método da Fluxo Certo, pronto para usar hoje',
+      texto:
+        'Duas planilhas criadas por mim, com o mesmo método que uso para fechar o caixa de empresas: orçado, real, semáforo e os 6 potes do dinheiro. Funcionam no Google Planilhas, no computador ou no celular.',
+      itens: [
+        {
+          destaque: false,
+          publico: 'Para a sua casa',
+          nome: 'Planilha Inteligente da Família',
+          texto: 'Veja para onde vai o dinheiro da família num olhar, mês a mês, sem precisar entender de fórmula.',
+          beneficios: [
+            'Semáforo em cada área da casa',
+            'Os 6 potes do dinheiro, com o ideal de cada um',
+            'Quanto cada pessoa da família gastou',
+            'Vídeo-aula passo a passo',
+          ],
+          preco: 'R$ 67',
+          precoNota: 'pagamento único · 7 dias de garantia',
+          ctaLabel: 'Quero a planilha',
+          ctaHref: 'https://planilhas.fluxocertoconsultoria.com.br/#casa',
+        },
+        {
+          destaque: true,
+          publico: 'Para empresárias e empresários',
+          nome: 'Seu Pró-labore Começa em Casa',
+          texto: 'Descubra quanto a sua empresa precisa te pagar todo mês e transforme o pró-labore numa despesa fixa.',
+          beneficios: [
+            'Pró-labore mínimo e ideal, calculados pelo custo da sua casa',
+            'Separação clara entre o dinheiro da casa e o da empresa',
+            'Painel com semáforo e os 6 potes',
+            'Vídeo-aula passo a passo',
+          ],
+          preco: 'R$ 97',
+          precoNota: 'pagamento único · 7 dias de garantia',
+          ctaLabel: 'Quero definir meu pró-labore',
+          ctaHref: 'https://planilhas.fluxocertoconsultoria.com.br/#negocio',
+        },
+      ],
+      rodapeTexto: 'Ver a página completa das planilhas →',
+      rodapeHref: 'https://planilhas.fluxocertoconsultoria.com.br',
     },
 
     clientes: {
