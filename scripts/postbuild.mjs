@@ -20,12 +20,28 @@ if (!existsSync(origem)) {
 const base = readFileSync(origem, 'utf8')
 const variante = (nome) => base.replace('</head>', `<!-- rota:${nome} --></head>`)
 
+// Ajustes de SEO por rota no HTML estático (o que o Google lê antes do JavaScript).
+const ajustes = {
+  admin: (html) =>
+    html
+      .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, '')
+      .replace('</head>', '<meta name="robots" content="noindex, nofollow" /></head>'),
+  mentoria: (html) =>
+    html
+      .replace(/<title>[^<]*<\/title>/, '<title>Mentoria Do Caos ao Lucro | Fluxo Certo</title>')
+      .replace(
+        /(<meta\s+name="description"\s+content=")[^"]*(")/,
+        '$1Descubra em 2 horas se o seu hotel realmente tem lucro. Mentoria Do Caos ao Lucro, com diagnóstico financeiro, fluxo de caixa com DRE e plano de ação.$2',
+      )
+      .replace('href="https://fluxocertoconsultoria.com.br/" />', 'href="https://fluxocertoconsultoria.com.br/mentoria" />'),
+}
+
 for (const rota of ['admin', 'mentoria']) {
   mkdirSync(`dist/${rota}`, { recursive: true })
-  writeFileSync(`dist/${rota}/index.html`, variante(rota))
+  writeFileSync(`dist/${rota}/index.html`, ajustes[rota](variante(rota)))
 }
 
 // 404.html é o nome reservado que o Pages usa para caminhos sem correspondência.
-copyFileSync(origem, 'dist/404.html')
+writeFileSync('dist/404.html', base.replace('</head>', '<meta name="robots" content="noindex" /></head>'))
 
 console.log('postbuild: dist/admin/index.html, dist/mentoria/index.html e dist/404.html gerados')

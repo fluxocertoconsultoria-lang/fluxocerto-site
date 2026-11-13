@@ -13,10 +13,10 @@ function CartaoFlutuante() {
     <>
       <div className="absolute -right-4 -top-6 hidden w-48 rounded-lg bg-brand p-4 text-white shadow-2xl sm:block sm:w-56">
         <div className="flex items-center justify-between text-[11px] text-white/70">
-          <span>Income</span>
-          <span className="text-white/50">Total</span>
+          <span>Fluxo de caixa</span>
+          <span className="text-white/50">Projetado</span>
         </div>
-        <p className="mt-1 font-display text-[22px] font-semibold">$102,721</p>
+        <p className="mt-1 font-display text-[22px] font-semibold">No azul</p>
         <svg viewBox="0 0 200 60" className="mt-2 h-12 w-full text-accent">
           <polyline
             points="0,45 30,30 60,38 90,15 120,25 150,10 180,20 200,5"
