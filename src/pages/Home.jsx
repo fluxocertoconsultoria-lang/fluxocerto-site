@@ -3,10 +3,11 @@ import Reveal from '../components/Reveal.jsx'
 import Accordion from '../components/Accordion.jsx'
 import Seo from '../components/Seo.jsx'
 import LogoMarquee from '../components/LogoMarquee.jsx'
-import Depoimentos from '../components/Depoimentos.jsx'
 import ParceirosNegocio from '../components/ParceirosNegocio.jsx'
 import Icon from '../components/Icons.jsx'
 import VitrinePlanilhas from '../components/VitrinePlanilhas.jsx'
+import NossoEspaco from '../components/NossoEspaco.jsx'
+import DepoimentosVideo from '../components/DepoimentosVideo.jsx'
 
 function CartaoFlutuante() {
   return (
@@ -190,6 +191,9 @@ export default function Home() {
         </section>
       ) : null}
 
+      {/* ------------------------------------------------- nosso espaço */}
+      <NossoEspaco />
+
       {/* ------------------------------------------------------ serviços */}
       {home.servicos.ativo !== false ? (
         <section className="bg-white py-20 md:py-28">
@@ -267,7 +271,7 @@ export default function Home() {
       ) : null}
 
       {/* ---------------------------------------------------- depoimentos */}
-      {home.depoimentos.ativo !== false ? <Depoimentos dados={home.depoimentos} /> : null}
+      <DepoimentosVideo />
 
       {/* ----------------------------------------------------------- faq */}
       {home.faq.ativo !== false ? (
