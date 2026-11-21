@@ -3,7 +3,6 @@ import Reveal from '../components/Reveal.jsx'
 import Accordion from '../components/Accordion.jsx'
 import Seo from '../components/Seo.jsx'
 import LogoMarquee from '../components/LogoMarquee.jsx'
-import Depoimentos from '../components/Depoimentos.jsx'
 import ParceirosNegocio from '../components/ParceirosNegocio.jsx'
 import Icon from '../components/Icons.jsx'
 import VitrinePlanilhas from '../components/VitrinePlanilhas.jsx'
@@ -272,7 +271,6 @@ export default function Home() {
       ) : null}
 
       {/* ---------------------------------------------------- depoimentos */}
-      {home.depoimentos.ativo !== false ? <Depoimentos dados={home.depoimentos} /> : null}
       <DepoimentosVideo />
 
       {/* ----------------------------------------------------------- faq */}
