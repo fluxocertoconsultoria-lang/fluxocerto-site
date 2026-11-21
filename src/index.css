@@ -110,3 +110,82 @@
     transition: none;
   }
 }
+
+
+/* ------------------------------------------------------------------
+   Tema escuro do site público (o painel /admin continua claro).
+   Fica fora dos @layer para prevalecer sobre os utilitários.
+------------------------------------------------------------------- */
+body:has(.site-escuro) {
+  background: #0a0a0a;
+}
+.site-escuro {
+  --fc-fundo: #0a0a0a;
+  --fc-faixa: #11141b;
+  --fc-card: #161a23;
+  --fc-texto: #eef1f7;
+  --fc-suave: #a3abba;
+  --fc-azul: #8b98ff;
+  --fc-linha: rgba(255, 255, 255, 0.1);
+  background: var(--fc-fundo);
+  color: var(--fc-suave);
+}
+.site-escuro main h1,
+.site-escuro main h2,
+.site-escuro main h3,
+.site-escuro main h4 {
+  color: var(--fc-texto);
+}
+.site-escuro section.bg-white,
+.site-escuro main > section:not([class*='bg-']) {
+  background-color: var(--fc-fundo);
+}
+.site-escuro section.bg-panel {
+  background-color: var(--fc-faixa);
+}
+.site-escuro main .text-ink {
+  color: var(--fc-texto);
+}
+.site-escuro main .text-ink-soft {
+  color: #c9d0dc;
+}
+.site-escuro main .text-brand {
+  color: var(--fc-azul);
+}
+.site-escuro main .bg-brand .text-brand,
+.site-escuro main .text-brand.bg-white {
+  color: var(--color-brand);
+}
+.site-escuro .eyebrow {
+  color: var(--fc-azul);
+}
+.site-escuro main .border-line {
+  border-color: var(--fc-linha);
+}
+.site-escuro main .card,
+.site-escuro main .card.bg-white,
+.site-escuro main .border-line.bg-white {
+  background-color: var(--fc-card);
+  border-color: var(--fc-linha);
+}
+.site-escuro main .bg-brand-soft {
+  background-color: rgba(43, 66, 232, 0.18);
+}
+.site-escuro .from-white {
+  --tw-gradient-from: var(--fc-faixa);
+}
+.site-escuro .marquee img {
+  filter: grayscale(1) brightness(0) invert(1);
+  opacity: 0.65;
+}
+.site-escuro .marquee img:hover {
+  opacity: 1;
+}
+.site-escuro main details,
+.site-escuro main summary {
+  border-color: var(--fc-linha);
+}
+
+.site-escuro main div.bg-panel {
+  background-color: var(--fc-card);
+}

@@ -72,6 +72,25 @@ function CardServico({ item, indice }) {
   )
 }
 
+const CARDS_EXTRAS = [
+  {
+    icone: '/img/icon-youtube.png',
+    titulo: 'Assista ao canal no YouTube',
+    valor: '@fluxocerto',
+    href: 'https://www.youtube.com/@fluxocerto',
+  },
+  {
+    icone: '/img/icon-livro.png',
+    titulo: 'Leia o livro Do Caos ao Lucro',
+    valor: 'Disponível na Amazon',
+    href: 'https://www.amazon.com.br/dp/B0HC5H8CTM',
+  },
+]
+const cardsContato = (cards = []) => [
+  ...cards,
+  ...CARDS_EXTRAS.filter((extra) => !cards.some((c) => c.href === extra.href)),
+]
+
 export default function Home() {
   const { home } = useContent()
 
@@ -250,9 +269,13 @@ export default function Home() {
               </h2>
             </Reveal>
 
-            <div className="mt-14 grid gap-6 md:grid-cols-3">
-              {(home.contatoSecao.cards || []).map((card, i) => (
-                <Reveal key={i} delay={i * 90}>
+            <div className="mt-14 flex flex-wrap justify-center gap-6">
+              {cardsContato(home.contatoSecao.cards).map((card, i) => (
+                <Reveal
+                  key={i}
+                  delay={i * 90}
+                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                >
                   <a
                     href={card.href}
                     target="_blank"
@@ -261,7 +284,7 @@ export default function Home() {
                   >
                     <img src={card.icone} alt="" className="h-20 w-20 rounded-full object-cover" />
                     <h3 className="mt-6 font-display text-[19px]">{card.titulo}</h3>
-                    <p className="mt-2 break-words text-[16px] text-brand">{card.valor}</p>
+                    <p className="mt-2 break-all text-[16px] text-brand">{card.valor}</p>
                   </a>
                 </Reveal>
               ))}
