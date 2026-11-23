@@ -12,18 +12,21 @@ import DepoimentosVideo from '../components/DepoimentosVideo.jsx'
 function CartaoFlutuante() {
   return (
     <>
-      <div className="absolute -right-4 -top-6 hidden w-48 rounded-lg bg-brand p-4 text-white shadow-2xl sm:block sm:w-56">
-        <div className="flex items-center justify-between text-[11px] text-white/70">
+      <div className="absolute -right-6 top-6 hidden w-56 rounded-2xl border-2 border-accent/70 bg-brand p-5 text-white shadow-[0_20px_60px_-10px_rgba(68,182,93,0.55)] sm:block lg:-right-10 lg:w-64">
+        <div className="flex items-center justify-between text-[12px] font-medium uppercase tracking-[0.12em] text-white/80">
           <span>Fluxo de caixa</span>
           <span className="text-white/50">Projetado</span>
         </div>
-        <p className="mt-1 font-display text-[22px] font-semibold">No azul</p>
-        <svg viewBox="0 0 200 60" className="mt-2 h-12 w-full text-accent">
+        <p className="mt-2 flex items-center gap-2 font-display text-[30px] font-semibold leading-none lg:text-[34px]">
+          <span className="inline-block h-3 w-3 rounded-full bg-accent shadow-[0_0_12px_rgba(68,182,93,0.9)]" />
+          No azul
+        </p>
+        <svg viewBox="0 0 200 60" className="mt-3 h-14 w-full text-accent">
           <polyline
             points="0,45 30,30 60,38 90,15 120,25 150,10 180,20 200,5"
             fill="none"
             stroke="currentColor"
-            strokeWidth="3"
+            strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -35,8 +38,8 @@ function CartaoFlutuante() {
         </div>
       </div>
 
-      <div className="absolute -bottom-6 -left-6 hidden h-24 w-24 items-center justify-center rounded-lg bg-white p-3 shadow-2xl sm:flex">
-        <Icon name="trendUp" className="h-10 w-10 text-brand" />
+      <div className="absolute -bottom-6 -left-6 hidden h-24 w-24 items-center justify-center rounded-2xl bg-accent p-3 shadow-2xl sm:flex">
+        <Icon name="trendUp" className="h-11 w-11 text-white" />
       </div>
     </>
   )
@@ -101,7 +104,7 @@ export default function Home() {
       {/* ---------------------------------------------------------- hero */}
       {home.hero.ativo !== false ? (
         <section className="relative overflow-hidden bg-ink">
-          <div className="container-fc grid items-center gap-12 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+          <div className="container-fc grid items-center gap-12 pb-16 pt-8 md:grid-cols-2 md:gap-16 md:pb-20 md:pt-10">
             <Reveal>
               <p className="eyebrow">{home.hero.eyebrow}</p>
               <h1 className="mt-5 text-[34px] leading-[1.15] text-white sm:text-[44px] lg:text-[52px]">
