@@ -12,7 +12,7 @@ export default function SiteLayout() {
   }, [pathname])
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="site-escuro flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
         <Outlet />

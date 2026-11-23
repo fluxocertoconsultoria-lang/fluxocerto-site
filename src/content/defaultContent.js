@@ -27,11 +27,15 @@ export const defaultContent = {
   },
 
   contato: {
-    email: 'grazielasouza@fluxocerto.com.br',
+    email: 'fluxocertoconsultoria@gmail.com',
     whatsapp: '(11) 97557-8387',
     whatsappHref: 'https://wa.me/5511975578387',
     instagram: '@eugrazielasouza',
     instagramHref: 'https://www.instagram.com/eugrazielasouza',
+    youtube: 'YouTube @fluxocerto',
+    youtubeHref: 'https://www.youtube.com/@fluxocerto',
+    livro: 'Livro Do Caos ao Lucro',
+    livroHref: 'https://www.amazon.com.br/dp/B0HC5H8CTM',
   },
 
   home: {
@@ -242,8 +246,8 @@ export const defaultContent = {
         {
           icone: '/img/icon-email.png',
           titulo: 'Solicite uma Proposta por e-mail',
-          valor: 'grazielasouza@fluxocerto.com.br',
-          href: 'mailto:grazielasouza@fluxocerto.com.br',
+          valor: 'fluxocertoconsultoria@gmail.com',
+          href: 'mailto:fluxocertoconsultoria@gmail.com',
         },
         {
           icone: '/img/icon-whatsapp.png',

@@ -70,6 +70,26 @@ export default function Footer() {
                 {contato.instagram}
               </a>
             </li>
+            <li>
+              <a
+                href={contato.youtubeHref || 'https://www.youtube.com/@fluxocerto'}
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-white"
+              >
+                {contato.youtube || 'YouTube @fluxocerto'}
+              </a>
+            </li>
+            <li>
+              <a
+                href={contato.livroHref || 'https://www.amazon.com.br/dp/B0HC5H8CTM'}
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-white"
+              >
+                {contato.livro || 'Livro Do Caos ao Lucro'}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

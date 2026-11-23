@@ -22,6 +22,14 @@ export function mergeContent(base, override) {
   return override
 }
 
+/** Correções que valem mesmo se o conteúdo salvo no painel estiver desatualizado. */
+const CORRECOES = [['grazielasouza@fluxocerto.com.br', 'fluxocertoconsultoria@gmail.com']]
+function corrigir(conteudo) {
+  let texto = JSON.stringify(conteudo)
+  for (const [errado, certo] of CORRECOES) texto = texto.split(errado).join(certo)
+  return JSON.parse(texto)
+}
+
 export function ContentProvider({ children }) {
   const [salvo, setSalvo] = useState(null)
   const [carregando, setCarregando] = useState(true)
@@ -39,7 +47,7 @@ export function ContentProvider({ children }) {
   }, [])
 
   const valor = useMemo(
-    () => ({ content: mergeContent(defaultContent, salvo), carregando, recarregar: setSalvo }),
+    () => ({ content: corrigir(mergeContent(defaultContent, salvo)), carregando, recarregar: setSalvo }),
     [salvo, carregando],
   )
 
