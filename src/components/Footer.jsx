@@ -97,9 +97,14 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-fc flex flex-col items-center justify-between gap-2 py-6 text-[14px] sm:flex-row">
           <p>{(rodape.texto || '').replace('©', `© ${ano}`)}</p>
-          <Link to="/admin" className="text-white/40 transition hover:text-white/80">
-            Painel
-          </Link>
+          <div className="flex gap-6">
+            <Link to="/politica-de-privacidade" className="text-white/60 transition hover:text-white">
+              Política de privacidade
+            </Link>
+            <Link to="/admin" className="text-white/40 transition hover:text-white/80">
+              Painel
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

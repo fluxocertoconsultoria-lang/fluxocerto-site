@@ -34,9 +34,17 @@ const ajustes = {
         '$1Descubra em 2 horas se o seu hotel realmente tem lucro. Mentoria Do Caos ao Lucro, com diagnóstico financeiro, fluxo de caixa com DRE e plano de ação.$2',
       )
       .replace('href="https://fluxocertoconsultoria.com.br/" />', 'href="https://fluxocertoconsultoria.com.br/mentoria" />'),
+  'politica-de-privacidade': (html) =>
+    html
+      .replace(/<title>[^<]*<\/title>/, '<title>Política de Privacidade | Fluxo Certo</title>')
+      .replace(
+        /(<meta\s+name="description"\s+content=")[^"]*(")/,
+        '$1Como a Fluxo Certo Soluções Financeiras trata os dados pessoais de quem visita o site e entra em contato.$2',
+      )
+      .replace('href="https://fluxocertoconsultoria.com.br/" />', 'href="https://fluxocertoconsultoria.com.br/politica-de-privacidade" />'),
 }
 
-for (const rota of ['admin', 'mentoria']) {
+for (const rota of ['admin', 'mentoria', 'politica-de-privacidade']) {
   mkdirSync(`dist/${rota}`, { recursive: true })
   writeFileSync(`dist/${rota}/index.html`, ajustes[rota](variante(rota)))
 }
@@ -44,4 +52,4 @@ for (const rota of ['admin', 'mentoria']) {
 // 404.html é o nome reservado que o Pages usa para caminhos sem correspondência.
 writeFileSync('dist/404.html', base.replace('</head>', '<meta name="robots" content="noindex" /></head>'))
 
-console.log('postbuild: dist/admin/index.html, dist/mentoria/index.html e dist/404.html gerados')
+console.log('postbuild: admin, mentoria, politica-de-privacidade e 404 gerados')
