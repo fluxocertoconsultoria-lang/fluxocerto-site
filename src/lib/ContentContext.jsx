@@ -23,7 +23,10 @@ export function mergeContent(base, override) {
 }
 
 /** Correções que valem mesmo se o conteúdo salvo no painel estiver desatualizado. */
-const CORRECOES = [['grazielasouza@fluxocerto.com.br', 'fluxocertoconsultoria@gmail.com']]
+const CORRECOES = [
+  ['grazielasouza@fluxocerto.com.br', 'fluxocertoconsultoria@gmail.com'],
+  ['"ctaSecundarioLabel":"Conheça as planilhas"', '"ctaSecundarioLabel":"Quero ter direção na PF e na PJ"'],
+]
 function corrigir(conteudo) {
   let texto = JSON.stringify(conteudo)
   for (const [errado, certo] of CORRECOES) texto = texto.split(errado).join(certo)
