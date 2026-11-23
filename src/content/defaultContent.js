@@ -52,7 +52,7 @@ export const defaultContent = {
         'Organização e controle financeiro para empresas que desejam crescer com segurança. Na hotelaria ou em outros setores, ajudamos você a enxergar seus números com clareza, tomar decisões estratégicas e conquistar previsibilidade.',
       ctaLabel: 'Entre em contato',
       ctaHref: 'https://wa.me/5511975578387',
-      ctaSecundarioLabel: 'Conheça as planilhas',
+      ctaSecundarioLabel: 'Quero ter direção na PF e na PJ',
       ctaSecundarioHref: '#planilhas',
       imagem: '/img/hero.jpg',
       imagemAlt: 'Graziela Souza, consultora financeira',
