@@ -33,8 +33,8 @@ function corrigir(conteudo) {
   return JSON.parse(texto)
 }
 
-export function ContentProvider({ children }) {
-  const [salvo, setSalvo] = useState(null)
+export function ContentProvider({ children, inicial = null }) {
+  const [salvo, setSalvo] = useState(inicial)
   const [carregando, setCarregando] = useState(true)
 
   useEffect(() => {

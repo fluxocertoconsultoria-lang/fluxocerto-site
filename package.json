@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:api": "wrangler pages dev --port 8788",
-    "build": "vite build && node scripts/postbuild.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/postbuild.mjs && node scripts/prerender.mjs",
     "preview": "npm run build && wrangler pages dev",
     "deploy": "npm run build && wrangler pages deploy",
     "db:local": "wrangler d1 execute fluxocerto --local --file=./schema.sql",
